@@ -3,133 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Retail Company Careers</title>
-  <meta name="description" content="Retail Company Careers – job openings at an established Philippine retail company (department store and supermarket).">
-  <style>
-    :root {
-      --green: #1B7D35;
-      --green-dark: #145F28;
-      --gold: #A39E1E;
-      --gold-soft: #F8F7EA;
-      --text: #1F2933;
-      --muted: #56616B;
-      --line: #E4E2C8;
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--text);
-      background: #fff;
-    }
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
-
-    /* Top bar */
-    .topbar { background: var(--green); color: #fff; border-bottom: 5px solid var(--gold); }
-    .topbar .wrap { padding-top: 14px; padding-bottom: 14px; font-weight: 700; font-size: 1.1rem; letter-spacing: .4px; }
-
-    /* Hero */
-    .hero { text-align: center; padding: 36px 0 18px; }
-    .hero h1 { color: var(--green); font-size: 2.2rem; line-height: 1.2; margin: 0 0 12px; }
-    .hero h1::after {
-      content: ""; display: block; width: 70px; height: 4px;
-      background: var(--gold); border-radius: 2px; margin: 14px auto 0;
-    }
-    .hero p { max-width: 650px; margin: 0 auto; color: var(--muted); }
-
-    /* Search and filters */
-    .controls { padding: 10px 0 4px; }
-    .search {
-      width: 100%; padding: 14px 16px; font-size: 1rem; font-family: inherit;
-      border: 2px solid var(--gold); border-radius: 10px; background: #fff; color: var(--text);
-    }
-    .search:focus { outline: 3px solid rgba(27,125,53,.25); border-color: var(--green); }
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .filter {
-      font: inherit; font-size: .95rem; font-weight: 600; cursor: pointer;
-      padding: 8px 18px; border-radius: 999px;
-      border: 2px solid var(--green); background: #fff; color: var(--green);
-    }
-    .filter:hover { background: var(--gold-soft); }
-    .filter.active { background: var(--green); color: #fff; }
-    .filter:focus-visible, .card-toggle:focus-visible, .btn:focus-visible {
-      outline: 3px solid var(--gold); outline-offset: 2px;
-    }
-    .count { color: var(--muted); font-size: .9rem; margin: 12px 0 0; }
-
-    /* Job cards */
-    .jobs { padding: 6px 0 30px; }
-    .card {
-      border: 1px solid var(--line); border-left: 6px solid var(--gold);
-      border-radius: 12px; margin: 14px 0; background: #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,.05);
-    }
-    .card.open { border-left-color: var(--green); }
-    .card-toggle {
-      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 18px; background: none; border: 0; text-align: left; cursor: pointer;
-      font: inherit; color: inherit; border-radius: 12px;
-    }
-    .card-title { color: var(--green); font-size: 1.1rem; font-weight: 700; margin: 0; line-height: 1.35; }
-    .meta { color: var(--muted); font-size: .92rem; margin-top: 4px; }
-    .hint { color: var(--gold); font-size: .85rem; font-weight: 600; margin-top: 2px; }
-    .chev {
-      flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%;
-      border: 2px solid var(--gold); color: var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; transition: transform .2s;
-    }
-    .card.open .chev { transform: rotate(180deg); }
-    .details { padding: 0 18px 4px; }
-    .details[hidden] { display: none; }
-    .intro { margin: 0 0 6px; }
-    .details h3 {
-      color: var(--green); font-size: 1rem; margin: 18px 0 6px;
-      display: inline-block; border-bottom: 3px solid var(--gold); padding-bottom: 2px;
-    }
-    .details ul { margin: 6px 0 0; padding-left: 22px; }
-    .details li { margin-bottom: 6px; }
-
-    .apply { padding: 8px 18px 18px; }
-    .apply-note {
-      background: var(--gold-soft); border: 1px solid var(--line); border-radius: 8px;
-      padding: 10px 12px; font-size: .92rem; color: var(--text); margin: 4px 0 12px;
-    }
-    .actions { display: flex; flex-direction: column; gap: 10px; }
-    .btn {
-      display: block; text-align: center; text-decoration: none;
-      padding: 15px 18px; border-radius: 10px; font-weight: 700; font-size: 1.05rem;
-    }
-    .btn-email { background: var(--green); color: #fff; border: 2px solid var(--green); }
-    .btn-email:hover { background: var(--green-dark); border-color: var(--green-dark); }
-    .btn-online { background: #fff; color: var(--green); border: 2px solid var(--green); }
-    .btn-online:hover { background: var(--gold-soft); }
-    @media (min-width: 640px) {
-      .actions { flex-direction: row; }
-      .actions .btn { flex: 1; }
-    }
-
-    .empty { text-align: center; color: var(--muted); padding: 30px 0; }
-
-    /* Footer */
-    footer { background: var(--green); color: #fff; border-top: 5px solid var(--gold); }
-    footer .wrap { padding-top: 22px; padding-bottom: 22px; text-align: center; }
-    footer p { margin: 6px 0; font-size: .95rem; }
-    footer .copy { opacity: .85; font-size: .85rem; margin-top: 14px; }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.8rem; }
-      body { font-size: 16px; }
-    }
-  </style>
+  <title>Careers – Job Openings in Manila | DynamicMinds</title>
+  <meta name="description" content="Job openings in Metro Manila at an established Philippine retail company (department store and supermarket): store operations, buying, merchandising, planning and audit roles.">
+  <link rel="canonical" href="https://dmbsi.github.io/Careers/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Careers – Job Openings in Manila | DynamicMinds">
+  <meta property="og:description" content="Job openings in Metro Manila at an established Philippine retail company (department store and supermarket): store operations, buying, merchandising, planning and audit roles.">
+  <meta property="og:url" content="https://dmbsi.github.io/Careers/">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Retail Company Careers",
+  "url": "https://dmbsi.github.io/Careers/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DynamicMinds Business Solutions Inc."
+  }
+}
+  </script>
 </head>
 <body>
 
   <div class="topbar">
-    <div class="wrap">Retail Company Careers</div>
+    <div class="wrap"><a href="./">Retail Company Careers</a></div>
   </div>
 
   <main class="wrap">
@@ -139,18 +37,429 @@
     </section>
 
     <section class="controls" aria-label="Search and filter jobs">
-      <label for="search" style="position:absolute;left:-9999px;">Search jobs</label>
+      <label for="search" class="sr-only">Search jobs</label>
       <input id="search" class="search" type="search" placeholder="Search jobs (e.g. buyer, audit, supermarket)" autocomplete="off">
       <div class="filters" role="group" aria-label="Filter jobs">
         <button class="filter active" type="button" data-filter="all">All</button>
         <button class="filter" type="button" data-filter="managers">Managers</button>
         <button class="filter" type="button" data-filter="staff">Supervisors &amp; Staff</button>
       </div>
-      <p class="count" id="count" aria-live="polite"></p>
+      <p class="count" id="count" aria-live="polite">Showing 10 of 10 positions</p>
     </section>
 
     <section class="jobs" id="jobs" aria-label="Job openings">
-      <noscript><p class="empty">Please turn on JavaScript to see the job openings.</p></noscript>
+      <article class="card" data-manager="1" data-search="store manager (supermarket) an established philippine retail company is looking for a supermarket store manager to lead its store team and drive sales, efficiency and customer service. drive store sales to meet or beat daily, weekly and monthly targets manage the store budget and control costs such as payroll, utilities and supplies oversee stock levels, ordering and receiving to avoid out-of-stocks and reduce losses from theft, spoilage or errors keep the store clean, organized and well-merchandised, with promo displays set up on time and correct prices hire, train, schedule, coach and evaluate store staff and supervisors handle escalated customer concerns and keep checkout lines moving during peak hours coordinate with buyers, suppliers, concessionaires, security and maintenance for smooth daily operations canvass and monitor competitors&#x27; prices, promos and product offerings regularly, and report findings so pricing stays competitive a bachelor&#x27;s degree in business administration, retail management, marketing or a related field at least 3–5 years of managerial or supervisory experience in retail, preferably in a supermarket or grocery a proven record of meeting sales goals, managing budgets and reducing shrinkage strong leadership, coaching and conflict-resolution skills working knowledge of pos and inventory systems, and ms office (excel, word, outlook) knowledge of food safety standards (haccp) is an advantage willing to work weekends, evenings and holidays, and to be assigned to any of our branches within metro manila">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-0">
+          <div>
+            <h2 class="card-title">Store Manager (Supermarket)</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-0" hidden>
+          <p class="intro">An established Philippine retail company is looking for a Supermarket Store Manager to lead its store team and drive sales, efficiency and customer service.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Drive store sales to meet or beat daily, weekly and monthly targets</li>
+            <li>Manage the store budget and control costs such as payroll, utilities and supplies</li>
+            <li>Oversee stock levels, ordering and receiving to avoid out-of-stocks and reduce losses from theft, spoilage or errors</li>
+            <li>Keep the store clean, organized and well-merchandised, with promo displays set up on time and correct prices</li>
+            <li>Hire, train, schedule, coach and evaluate store staff and supervisors</li>
+            <li>Handle escalated customer concerns and keep checkout lines moving during peak hours</li>
+            <li>Coordinate with buyers, suppliers, concessionaires, security and maintenance for smooth daily operations</li>
+            <li>Canvass and monitor competitors&#x27; prices, promos and product offerings regularly, and report findings so pricing stays competitive</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Retail Management, Marketing or a related field</li>
+            <li>At least 3–5 years of managerial or supervisory experience in retail, preferably in a supermarket or grocery</li>
+            <li>A proven record of meeting sales goals, managing budgets and reducing shrinkage</li>
+            <li>Strong leadership, coaching and conflict-resolution skills</li>
+            <li>Working knowledge of POS and inventory systems, and MS Office (Excel, Word, Outlook)</li>
+            <li>Knowledge of food safety standards (HACCP) is an advantage</li>
+            <li>Willing to work weekends, evenings and holidays, and to be assigned to any of our branches within Metro Manila</li>
+          </ul>
+          <p class="page-link"><a href="jobs/store-manager-supermarket.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Store%20Manager%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="0" data-search="buyer (supermarket) an established philippine retail company is looking for a supermarket buyer to handle purchasing for an assigned product category and keep its product mix competitive. the category will be assigned based on your experience. select and buy products for an assigned supermarket category (e.g. fresh, dry grocery, frozen/chilled, beverages, personal care or household) based on trends, customer demand and market checks negotiate with suppliers on cost, payment terms, returns of bad orders, listing fees and rebates manage the purchasing budget and stock levels to avoid out-of-stocks, overstocking and expired goods set retail prices to meet margin targets while staying competitive plan supplier-funded promotions, flyer items and seasonal buying monitor supplier performance (fill rate, on-time delivery, quality) coordinate with store operations, warehouse, marketing and finance a bachelor&#x27;s degree in business administration, marketing, supply chain management or economics at least 2–3 years in retail purchasing, procurement or merchandising, preferably in a supermarket or fmcg (fast-moving consumer goods) company; experience in any grocery or non-food category is welcome a proven record of successful supplier negotiations advanced excel skills (vlookup, pivot tables) for sales and margin analysis good knowledge of local consumer preferences and seasonal trends high integrity in dealing with suppliers willing to be assigned to any of our branches or offices within metro manila">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-1">
+          <div>
+            <h2 class="card-title">Buyer (Supermarket)</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-1" hidden>
+          <p class="intro">An established Philippine retail company is looking for a Supermarket Buyer to handle purchasing for an assigned product category and keep its product mix competitive. The category will be assigned based on your experience.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Select and buy products for an assigned supermarket category (e.g. Fresh, Dry Grocery, Frozen/Chilled, Beverages, Personal Care or Household) based on trends, customer demand and market checks</li>
+            <li>Negotiate with suppliers on cost, payment terms, returns of bad orders, listing fees and rebates</li>
+            <li>Manage the purchasing budget and stock levels to avoid out-of-stocks, overstocking and expired goods</li>
+            <li>Set retail prices to meet margin targets while staying competitive</li>
+            <li>Plan supplier-funded promotions, flyer items and seasonal buying</li>
+            <li>Monitor supplier performance (fill rate, on-time delivery, quality)</li>
+            <li>Coordinate with store operations, warehouse, marketing and finance</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Marketing, Supply Chain Management or Economics</li>
+            <li>At least 2–3 years in retail purchasing, procurement or merchandising, preferably in a supermarket or FMCG (fast-moving consumer goods) company; experience in any grocery or non-food category is welcome</li>
+            <li>A proven record of successful supplier negotiations</li>
+            <li>Advanced Excel skills (VLOOKUP, pivot tables) for sales and margin analysis</li>
+            <li>Good knowledge of local consumer preferences and seasonal trends</li>
+            <li>High integrity in dealing with suppliers</li>
+            <li>Willing to be assigned to any of our branches or offices within Metro Manila</li>
+          </ul>
+          <p class="page-link"><a href="jobs/buyer-supermarket.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Buyer%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="1" data-search="merchandising manager (supermarket) an established philippine retail company is looking for a merchandising manager to lead its supermarket merchandising and keep it competitive. build and carry out the merchandising strategy across all supermarket categories (fresh, dry grocery, non-food, personal care) manage category performance: sales, gross margin, inventory turnover and the product assortment set competitive prices and plan promotions and seasonal campaigns approve planograms and oversee shelf space, displays and in-store presentation work with buying, warehouse and store teams to keep shelves stocked, rotate stock and reduce waste negotiate trading terms, rebates and listing fees with suppliers lead and train buyers and store merchandising teams a bachelor&#x27;s degree in business administration, marketing, economics, supply chain management or a related field. an mba or a retail or procurement certification is a plus. at least 5–7 years in retail or fmcg, including 2–3 years as a supervisor or manager (for example senior buyer, category manager or assistant merchandising manager) a record of growing sales and margins in supermarket categories strong excel skills (pivot tables, vlookup) and experience with erp or pos systems strong negotiation and communication skills, and high integrity willing to visit stores and check competitors regularly, and to work longer hours during inventory counts and peak seasons willing to be assigned to any of our branches or offices within metro manila">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-2">
+          <div>
+            <h2 class="card-title">Merchandising Manager (Supermarket)</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-2" hidden>
+          <p class="intro">An established Philippine retail company is looking for a Merchandising Manager to lead its supermarket merchandising and keep it competitive.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Build and carry out the merchandising strategy across all supermarket categories (Fresh, Dry Grocery, Non-Food, Personal Care)</li>
+            <li>Manage category performance: sales, gross margin, inventory turnover and the product assortment</li>
+            <li>Set competitive prices and plan promotions and seasonal campaigns</li>
+            <li>Approve planograms and oversee shelf space, displays and in-store presentation</li>
+            <li>Work with buying, warehouse and store teams to keep shelves stocked, rotate stock and reduce waste</li>
+            <li>Negotiate trading terms, rebates and listing fees with suppliers</li>
+            <li>Lead and train buyers and store merchandising teams</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Marketing, Economics, Supply Chain Management or a related field. An MBA or a retail or procurement certification is a plus.</li>
+            <li>At least 5–7 years in retail or FMCG, including 2–3 years as a supervisor or manager (for example Senior Buyer, Category Manager or Assistant Merchandising Manager)</li>
+            <li>A record of growing sales and margins in supermarket categories</li>
+            <li>Strong Excel skills (pivot tables, VLOOKUP) and experience with ERP or POS systems</li>
+            <li>Strong negotiation and communication skills, and high integrity</li>
+            <li>Willing to visit stores and check competitors regularly, and to work longer hours during inventory counts and peak seasons</li>
+            <li>Willing to be assigned to any of our branches or offices within Metro Manila</li>
+          </ul>
+          <p class="page-link"><a href="jobs/merchandising-manager-supermarket.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandising%20Manager%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="0" data-search="merchandise planning and control analyst an established philippine retail company (department store and supermarket) is looking for a merchandise planning and control analyst to prepare, monitor and analyze sales, purchase budgets and inventory levels. prepare sales and purchase budgets per department and classification, using growth, industry and inflation data compute average stock, monthly stock and planned markdowns monitor sales, purchases, markdowns and open orders per store against the merchandise plan analyze monthly sales and inventory reports and recommend inventory adjustments compute economic order quantity (eoq), re-order points and cost standards evaluate how well promotions perform, working with the marketing team maintain historical sales, purchase and markdown records a bachelor&#x27;s degree in business administration, accounting, management, economics, statistics or a related field 1–3 years in merchandise planning, inventory control, budgeting or sales analysis, preferably in retail (fresh graduates with strong analytical skills are welcome to apply) advanced excel skills (pivot tables, lookups, formulas) good understanding of inventory concepts such as stock-to-sales, markdowns, eoq and re-order points detail-oriented and accurate with numbers high integrity in handling confidential data willing to be assigned to any of our branches or offices within metro manila">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-3">
+          <div>
+            <h2 class="card-title">Merchandise Planning and Control Analyst</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-3" hidden>
+          <p class="intro">An established Philippine retail company (department store and supermarket) is looking for a Merchandise Planning and Control Analyst to prepare, monitor and analyze sales, purchase budgets and inventory levels.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Prepare sales and purchase budgets per department and classification, using growth, industry and inflation data</li>
+            <li>Compute average stock, monthly stock and planned markdowns</li>
+            <li>Monitor sales, purchases, markdowns and open orders per store against the merchandise plan</li>
+            <li>Analyze monthly sales and inventory reports and recommend inventory adjustments</li>
+            <li>Compute economic order quantity (EOQ), re-order points and cost standards</li>
+            <li>Evaluate how well promotions perform, working with the marketing team</li>
+            <li>Maintain historical sales, purchase and markdown records</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Accounting, Management, Economics, Statistics or a related field</li>
+            <li>1–3 years in merchandise planning, inventory control, budgeting or sales analysis, preferably in retail (fresh graduates with strong analytical skills are welcome to apply)</li>
+            <li>Advanced Excel skills (pivot tables, lookups, formulas)</li>
+            <li>Good understanding of inventory concepts such as stock-to-sales, markdowns, EOQ and re-order points</li>
+            <li>Detail-oriented and accurate with numbers</li>
+            <li>High integrity in handling confidential data</li>
+            <li>Willing to be assigned to any of our branches or offices within Metro Manila</li>
+          </ul>
+          <p class="page-link"><a href="jobs/merchandise-planning-and-control-analyst.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandise%20Planning%20and%20Control%20Analyst&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="0" data-search="merchandise planning and analysis supervisor an established philippine retail company (department store and supermarket) is looking for a merchandise planning and analysis supervisor to keep sales, purchases and inventory in balance. monitor sales, purchase budgets and inventory levels across merchandising departments check planned sales, purchases, markdowns, monthly and average stocks, and initial gross margins for accuracy prepare quarterly, semi-annual and yearly sales reviews for management prepare monthly concessionaire analysis reports oversee physical inventory taking keep historical sales, purchase and inventory data, and follow up system-generated reports lead, schedule, train and evaluate a team of analysts a bachelor&#x27;s degree in business administration, accounting, management, statistics or a related field at least 3 years in merchandise planning, inventory control or sales analysis in retail, with at least 1 year in a supervisory role strong skills with numbers and good knowledge of retail metrics (sell-through, stock-to-sales, gross margin) advanced excel skills (pivot tables, lookups); experience with retail/erp systems is a plus good at coordinating with buyers and merchandising teams detail-oriented, with high integrity in handling confidential data willing to be assigned to any of our branches or offices within metro manila">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-4">
+          <div>
+            <h2 class="card-title">Merchandise Planning and Analysis Supervisor</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-4" hidden>
+          <p class="intro">An established Philippine retail company (department store and supermarket) is looking for a Merchandise Planning and Analysis Supervisor to keep sales, purchases and inventory in balance.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Monitor sales, purchase budgets and inventory levels across merchandising departments</li>
+            <li>Check planned sales, purchases, markdowns, monthly and average stocks, and initial gross margins for accuracy</li>
+            <li>Prepare quarterly, semi-annual and yearly sales reviews for management</li>
+            <li>Prepare monthly concessionaire analysis reports</li>
+            <li>Oversee physical inventory taking</li>
+            <li>Keep historical sales, purchase and inventory data, and follow up system-generated reports</li>
+            <li>Lead, schedule, train and evaluate a team of analysts</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Accounting, Management, Statistics or a related field</li>
+            <li>At least 3 years in merchandise planning, inventory control or sales analysis in retail, with at least 1 year in a supervisory role</li>
+            <li>Strong skills with numbers and good knowledge of retail metrics (sell-through, stock-to-sales, gross margin)</li>
+            <li>Advanced Excel skills (pivot tables, lookups); experience with retail/ERP systems is a plus</li>
+            <li>Good at coordinating with buyers and merchandising teams</li>
+            <li>Detail-oriented, with high integrity in handling confidential data</li>
+            <li>Willing to be assigned to any of our branches or offices within Metro Manila</li>
+          </ul>
+          <p class="page-link"><a href="jobs/merchandise-planning-and-analysis-supervisor.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandise%20Planning%20and%20Analysis%20Supervisor&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="1" data-search="audit manager an established philippine retail company (department store and supermarket) is looking for an audit manager to lead its internal audit team, plan and oversee financial and operational audits across the main office and branches, and report findings to management. design and update audit programs, and prepare the annual audit plan and interim audit schedules lead and supervise the financial and operations audit supervisors and junior auditors, and review their working papers review internal controls and recommend improvements to systems and procedures conduct branch audits covering cash/pos, inventory counts, shrinkage and concessionaire accounts test compliance with company policies and procedures prepare and present audit reports to management manage the department budget, staff schedules, performance reviews and training coordinate with other department heads and attend management meetings a bachelor&#x27;s degree in accountancy, finance or a related field; cpa preferred (cia is a plus) at least 5 years of internal or external audit experience, including 2+ years supervising auditors audit experience in retail, a department store or a supermarket is a strong advantage strong knowledge of internal controls and cash and inventory audit procedures good leadership, communication and report-writing skills willing to work on-site and travel to branches within metro manila as needed">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-5">
+          <div>
+            <h2 class="card-title">Audit Manager</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-5" hidden>
+          <p class="intro">An established Philippine retail company (department store and supermarket) is looking for an Audit Manager to lead its internal audit team, plan and oversee financial and operational audits across the main office and branches, and report findings to management.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Design and update audit programs, and prepare the annual audit plan and interim audit schedules</li>
+            <li>Lead and supervise the Financial and Operations Audit Supervisors and Junior Auditors, and review their working papers</li>
+            <li>Review internal controls and recommend improvements to systems and procedures</li>
+            <li>Conduct branch audits covering cash/POS, inventory counts, shrinkage and concessionaire accounts</li>
+            <li>Test compliance with company policies and procedures</li>
+            <li>Prepare and present audit reports to management</li>
+            <li>Manage the department budget, staff schedules, performance reviews and training</li>
+            <li>Coordinate with other department heads and attend management meetings</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Accountancy, Finance or a related field; CPA preferred (CIA is a plus)</li>
+            <li>At least 5 years of internal or external audit experience, including 2+ years supervising auditors</li>
+            <li>Audit experience in retail, a department store or a supermarket is a strong advantage</li>
+            <li>Strong knowledge of internal controls and cash and inventory audit procedures</li>
+            <li>Good leadership, communication and report-writing skills</li>
+            <li>Willing to work on-site and travel to branches within Metro Manila as needed</li>
+          </ul>
+          <p class="page-link"><a href="jobs/audit-manager.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Audit%20Manager&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="0" data-search="junior auditor (financial) an established philippine retail company (department store and supermarket) is looking for a detail-oriented junior auditor to help protect company assets and keep financial records accurate across its stores. conduct surprise cash counts of cashier funds, pos/cash-in-drawer, sales for deposit, and disbursement and collection funds check accounting and financial data through reconciliations, vouching and review of books and records test compliance with company financial policies, memos and procedures audit accounting, finance, cashiering, and credit and collection operations take part in inventory and fixed asset counts to confirm assets exist and are kept safe prepare audit findings and reports for the audit supervisor help draft audit programs and recommend process improvements coordinate with department managers, branch staff and fellow auditors a bachelor&#x27;s degree in accountancy or a related accounting course; cpa or board passer is a plus 0–2 years of experience in audit, accounting or cashiering; retail, department store or supermarket experience is an advantage fresh graduates with audit-related ojt are welcome to apply honest, organized and detail-oriented good ms excel skills willing to travel to different branches within metro manila">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-6">
+          <div>
+            <h2 class="card-title">Junior Auditor (Financial)</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-6" hidden>
+          <p class="intro">An established Philippine retail company (department store and supermarket) is looking for a detail-oriented Junior Auditor to help protect company assets and keep financial records accurate across its stores.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Conduct surprise cash counts of cashier funds, POS/cash-in-drawer, sales for deposit, and disbursement and collection funds</li>
+            <li>Check accounting and financial data through reconciliations, vouching and review of books and records</li>
+            <li>Test compliance with company financial policies, memos and procedures</li>
+            <li>Audit accounting, finance, cashiering, and credit and collection operations</li>
+            <li>Take part in inventory and fixed asset counts to confirm assets exist and are kept safe</li>
+            <li>Prepare audit findings and reports for the Audit Supervisor</li>
+            <li>Help draft audit programs and recommend process improvements</li>
+            <li>Coordinate with department managers, branch staff and fellow auditors</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Accountancy or a related accounting course; CPA or board passer is a plus</li>
+            <li>0–2 years of experience in audit, accounting or cashiering; retail, department store or supermarket experience is an advantage</li>
+            <li>Fresh graduates with audit-related OJT are welcome to apply</li>
+            <li>Honest, organized and detail-oriented</li>
+            <li>Good MS Excel skills</li>
+            <li>Willing to travel to different branches within Metro Manila</li>
+          </ul>
+          <p class="page-link"><a href="jobs/junior-auditor-financial.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Junior%20Auditor%20%28Financial%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="1" data-search="store operations division manager (department store) an established philippine retail company is looking for a store operations division manager to lead its department store operations, including the selling floors, warehouse/receiving and counter (cashiering) teams, with the goal of hitting sales targets, giving excellent customer service and keeping costs low. lead department store managers, the traffic (warehouse/receiving) manager and counter managers across the division drive sales and excellent customer service, handle escalated complaints, and monitor each store&#x27;s sales performance improve store layout, displays, promotions, selling skills and product knowledge with the merchandising, store design and training teams oversee receiving, tagging, warehouse space and stock requisitions (fifo) to reduce losses and keep inventory at the right level manage counter/cashiering operations, including staff scheduling, supplies, pos machines and the safekeeping of cash and gift cheques prepare and control the division budget, work with leasing on concessionaire matters, and improve policies and procedures hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high a bachelor&#x27;s degree in business administration, management, retail management or a related field; an mba is a plus at least 8–10 years of retail store operations experience, including 5+ years managing multiple stores or departments department store experience, including warehousing/receiving, cashiering and concessionaire management a proven record of meeting sales targets, controlling expenses and reducing shrinkage good eye for visual merchandising, store layout and promotions strong leadership, decision-making and customer-service skills, and good knowledge of pos and inventory systems willing to work weekends and holidays, and to visit stores within metro manila regularly">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-7">
+          <div>
+            <h2 class="card-title">Store Operations Division Manager (Department Store)</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-7" hidden>
+          <p class="intro">An established Philippine retail company is looking for a Store Operations Division Manager to lead its department store operations, including the selling floors, warehouse/receiving and counter (cashiering) teams, with the goal of hitting sales targets, giving excellent customer service and keeping costs low.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Lead department store managers, the traffic (warehouse/receiving) manager and counter managers across the division</li>
+            <li>Drive sales and excellent customer service, handle escalated complaints, and monitor each store&#x27;s sales performance</li>
+            <li>Improve store layout, displays, promotions, selling skills and product knowledge with the merchandising, store design and training teams</li>
+            <li>Oversee receiving, tagging, warehouse space and stock requisitions (FIFO) to reduce losses and keep inventory at the right level</li>
+            <li>Manage counter/cashiering operations, including staff scheduling, supplies, POS machines and the safekeeping of cash and gift cheques</li>
+            <li>Prepare and control the division budget, work with leasing on concessionaire matters, and improve policies and procedures</li>
+            <li>Hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Management, Retail Management or a related field; an MBA is a plus</li>
+            <li>At least 8–10 years of retail store operations experience, including 5+ years managing multiple stores or departments</li>
+            <li>Department store experience, including warehousing/receiving, cashiering and concessionaire management</li>
+            <li>A proven record of meeting sales targets, controlling expenses and reducing shrinkage</li>
+            <li>Good eye for visual merchandising, store layout and promotions</li>
+            <li>Strong leadership, decision-making and customer-service skills, and good knowledge of POS and inventory systems</li>
+            <li>Willing to work weekends and holidays, and to visit stores within Metro Manila regularly</li>
+          </ul>
+          <p class="page-link"><a href="jobs/store-operations-division-manager-department-store.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Store%20Operations%20Division%20Manager%20%28Department%20Store%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="1" data-search="store operations division manager (supermarket) an established philippine retail company is looking for a store operations division manager to lead its supermarket operations, including the store, receiving/warehouse and checkout teams, with the goal of hitting sales targets, giving fast and friendly service and keeping costs and losses low. lead supermarket store managers and the receiving/warehouse and checkout (counter) teams across the division drive sales and fast, courteous service, handle escalated complaints, and monitor each store&#x27;s sales performance oversee receiving, stocking and stock rotation (fifo) of fresh, chilled and dry goods to reduce spoilage, expiry and shrinkage keep shelves full, displays neat and promotions on time, working with supermarket purchasing and merchandising manage checkout operations, including cashier scheduling, bagging supplies, pos machines and the safekeeping of cash prepare and control the division budget, and enforce food safety, sanitation and store standards hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high a bachelor&#x27;s degree in business administration, management, retail management or a related field; an mba is a plus at least 8–10 years of retail store operations experience, including 5+ years managing multiple supermarket or grocery stores hands-on experience with fresh/perishables handling, receiving and checkout operations a proven record of meeting sales targets, controlling expenses and reducing shrinkage and spoilage knowledge of food safety and sanitation standards (e.g. haccp) is an advantage strong leadership, decision-making and customer-service skills, and good knowledge of pos and inventory systems willing to work weekends and holidays, and to visit stores within metro manila regularly">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-8">
+          <div>
+            <h2 class="card-title">Store Operations Division Manager (Supermarket)</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-8" hidden>
+          <p class="intro">An established Philippine retail company is looking for a Store Operations Division Manager to lead its supermarket operations, including the store, receiving/warehouse and checkout teams, with the goal of hitting sales targets, giving fast and friendly service and keeping costs and losses low.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Lead supermarket store managers and the receiving/warehouse and checkout (counter) teams across the division</li>
+            <li>Drive sales and fast, courteous service, handle escalated complaints, and monitor each store&#x27;s sales performance</li>
+            <li>Oversee receiving, stocking and stock rotation (FIFO) of fresh, chilled and dry goods to reduce spoilage, expiry and shrinkage</li>
+            <li>Keep shelves full, displays neat and promotions on time, working with supermarket purchasing and merchandising</li>
+            <li>Manage checkout operations, including cashier scheduling, bagging supplies, POS machines and the safekeeping of cash</li>
+            <li>Prepare and control the division budget, and enforce food safety, sanitation and store standards</li>
+            <li>Hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Management, Retail Management or a related field; an MBA is a plus</li>
+            <li>At least 8–10 years of retail store operations experience, including 5+ years managing multiple supermarket or grocery stores</li>
+            <li>Hands-on experience with fresh/perishables handling, receiving and checkout operations</li>
+            <li>A proven record of meeting sales targets, controlling expenses and reducing shrinkage and spoilage</li>
+            <li>Knowledge of food safety and sanitation standards (e.g. HACCP) is an advantage</li>
+            <li>Strong leadership, decision-making and customer-service skills, and good knowledge of POS and inventory systems</li>
+            <li>Willing to work weekends and holidays, and to visit stores within Metro Manila regularly</li>
+          </ul>
+          <p class="page-link"><a href="jobs/store-operations-division-manager-supermarket.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Store%20Operations%20Division%20Manager%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-manager="1" data-search="merchandise planning and control manager an established philippine retail company (department store and supermarket) is looking for a merchandise planning and control manager to manage its merchandise planning and control team and help the company reach its sales and profit goals. lead the preparation of sales and purchase budgets per store, department and classification make sure purchase budgets match sales budgets and the company&#x27;s profit and gross margin targets work with merchandising, supermarket purchasing and operations, it, accounting and top management on budgets, reports and inventory matters track actual purchases, markdowns, monthly stocks and gross margin against plan, and give timely reports to management analyze inventory adjustments and oversee the recording of supermarket inventory movements oversee physical inventory taking and the timely submission of monthly reports manage the merchandise planning and control team (merchandise planning and control officer, stock control supervisor, merchandising analysts and stock control clerks): assign and schedule work, train, coach and evaluate staff, and manage the department budget a bachelor&#x27;s degree in business administration, accounting, management, economics, statistics or a related field at least 5–7 years in merchandise planning, inventory control or sales analysis in retail, including 2–3 years as a supervisor or manager strong knowledge of retail budgeting and metrics (open-to-buy, stock-to-sales, markdowns, gross margin) advanced excel skills (pivot tables, lookups); experience with retail/erp systems is a plus good at working with buyers, merchandising, it and accounting/finance teams strong leadership and report-writing skills detail-oriented, with high integrity in handling confidential data">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-9">
+          <div>
+            <h2 class="card-title">Merchandise Planning and Control Manager</h2>
+            <div class="meta">Full-time | On-site | Metro Manila only</div>
+            <div class="hint">Tap to view details</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="details" id="job-details-9" hidden>
+          <p class="intro">An established Philippine retail company (department store and supermarket) is looking for a Merchandise Planning and Control Manager to manage its Merchandise Planning and Control team and help the company reach its sales and profit goals.</p>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Lead the preparation of sales and purchase budgets per store, department and classification</li>
+            <li>Make sure purchase budgets match sales budgets and the company&#x27;s profit and gross margin targets</li>
+            <li>Work with merchandising, supermarket purchasing and operations, IT, accounting and top management on budgets, reports and inventory matters</li>
+            <li>Track actual purchases, markdowns, monthly stocks and gross margin against plan, and give timely reports to management</li>
+            <li>Analyze inventory adjustments and oversee the recording of supermarket inventory movements</li>
+            <li>Oversee physical inventory taking and the timely submission of monthly reports</li>
+            <li>Manage the Merchandise Planning and Control team (Merchandise Planning and Control officer, stock control supervisor, merchandising analysts and stock control clerks): assign and schedule work, train, coach and evaluate staff, and manage the department budget</li>
+          </ul>
+          <h3>What we're looking for</h3>
+          <ul>
+            <li>A bachelor&#x27;s degree in Business Administration, Accounting, Management, Economics, Statistics or a related field</li>
+            <li>At least 5–7 years in merchandise planning, inventory control or sales analysis in retail, including 2–3 years as a supervisor or manager</li>
+            <li>Strong knowledge of retail budgeting and metrics (open-to-buy, stock-to-sales, markdowns, gross margin)</li>
+            <li>Advanced Excel skills (pivot tables, lookups); experience with retail/ERP systems is a plus</li>
+            <li>Good at working with buyers, merchandising, IT and accounting/finance teams</li>
+            <li>Strong leadership and report-writing skills</li>
+            <li>Detail-oriented, with high integrity in handling confidential data</li>
+          </ul>
+          <p class="page-link"><a href="jobs/merchandise-planning-and-control-manager.html">Open the full job page</a></p>
+        </div>
+        <div class="apply">
+          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandise%20Planning%20and%20Control%20Manager&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
+            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
+          </div>
+        </div>
+      </article>
+      <p class="empty" id="empty" hidden>No jobs match your search. Try another word or choose "All".</p>
     </section>
   </main>
 
@@ -163,360 +472,6 @@
     </div>
   </footer>
 
-  <script>
-    // ===== SETTINGS =====
-    // Paste your online application form link between the quotes.
-    // Leave it empty ("") to hide the "Apply online" button.
-    const FORM_LINK = "";
-
-    const APPLY_EMAIL = "dmbsitalentsteam@gmail.com";
-    const EMAIL_TEXT = "Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject.";
-
-    // ===== JOBS =====
-    const JOBS = [
-      {
-        title: "STORE MANAGER (SUPERMARKET)",
-        intro: "An established Philippine retail company is looking for a Supermarket Store Manager to lead its store team and drive sales, efficiency and customer service.",
-        duties: [
-          "Drive store sales to meet or beat daily, weekly and monthly targets",
-          "Manage the store budget and control costs such as payroll, utilities and supplies",
-          "Oversee stock levels, ordering and receiving to avoid out-of-stocks and reduce losses from theft, spoilage or errors",
-          "Keep the store clean, organized and well-merchandised, with promo displays set up on time and correct prices",
-          "Hire, train, schedule, coach and evaluate store staff and supervisors",
-          "Handle escalated customer concerns and keep checkout lines moving during peak hours",
-          "Coordinate with buyers, suppliers, concessionaires, security and maintenance for smooth daily operations",
-          "Canvass and monitor competitors' prices, promos and product offerings regularly, and report findings so pricing stays competitive"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Retail Management, Marketing or a related field",
-          "At least 3–5 years of managerial or supervisory experience in retail, preferably in a supermarket or grocery",
-          "A proven record of meeting sales goals, managing budgets and reducing shrinkage",
-          "Strong leadership, coaching and conflict-resolution skills",
-          "Working knowledge of POS and inventory systems, and MS Office (Excel, Word, Outlook)",
-          "Knowledge of food safety standards (HACCP) is an advantage",
-          "Willing to work weekends, evenings and holidays, and to be assigned to any of our branches within Metro Manila"
-        ]
-      },
-      {
-        title: "BUYER (SUPERMARKET)",
-        intro: "An established Philippine retail company is looking for a Supermarket Buyer to handle purchasing for an assigned product category and keep its product mix competitive. The category will be assigned based on your experience.",
-        duties: [
-          "Select and buy products for an assigned supermarket category (e.g. Fresh, Dry Grocery, Frozen/Chilled, Beverages, Personal Care or Household) based on trends, customer demand and market checks",
-          "Negotiate with suppliers on cost, payment terms, returns of bad orders, listing fees and rebates",
-          "Manage the purchasing budget and stock levels to avoid out-of-stocks, overstocking and expired goods",
-          "Set retail prices to meet margin targets while staying competitive",
-          "Plan supplier-funded promotions, flyer items and seasonal buying",
-          "Monitor supplier performance (fill rate, on-time delivery, quality)",
-          "Coordinate with store operations, warehouse, marketing and finance"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Marketing, Supply Chain Management or Economics",
-          "At least 2–3 years in retail purchasing, procurement or merchandising, preferably in a supermarket or FMCG (fast-moving consumer goods) company; experience in any grocery or non-food category is welcome",
-          "A proven record of successful supplier negotiations",
-          "Advanced Excel skills (VLOOKUP, pivot tables) for sales and margin analysis",
-          "Good knowledge of local consumer preferences and seasonal trends",
-          "High integrity in dealing with suppliers",
-          "Willing to be assigned to any of our branches or offices within Metro Manila"
-        ]
-      },
-      {
-        title: "MERCHANDISING MANAGER (SUPERMARKET)",
-        intro: "An established Philippine retail company is looking for a Merchandising Manager to lead its supermarket merchandising and keep it competitive.",
-        duties: [
-          "Build and carry out the merchandising strategy across all supermarket categories (Fresh, Dry Grocery, Non-Food, Personal Care)",
-          "Manage category performance: sales, gross margin, inventory turnover and the product assortment",
-          "Set competitive prices and plan promotions and seasonal campaigns",
-          "Approve planograms and oversee shelf space, displays and in-store presentation",
-          "Work with buying, warehouse and store teams to keep shelves stocked, rotate stock and reduce waste",
-          "Negotiate trading terms, rebates and listing fees with suppliers",
-          "Lead and train buyers and store merchandising teams"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Marketing, Economics, Supply Chain Management or a related field. An MBA or a retail or procurement certification is a plus.",
-          "At least 5–7 years in retail or FMCG, including 2–3 years as a supervisor or manager (for example Senior Buyer, Category Manager or Assistant Merchandising Manager)",
-          "A record of growing sales and margins in supermarket categories",
-          "Strong Excel skills (pivot tables, VLOOKUP) and experience with ERP or POS systems",
-          "Strong negotiation and communication skills, and high integrity",
-          "Willing to visit stores and check competitors regularly, and to work longer hours during inventory counts and peak seasons",
-          "Willing to be assigned to any of our branches or offices within Metro Manila"
-        ]
-      },
-      {
-        title: "MERCHANDISE PLANNING AND CONTROL ANALYST",
-        intro: "An established Philippine retail company (department store and supermarket) is looking for a Merchandise Planning and Control Analyst to prepare, monitor and analyze sales, purchase budgets and inventory levels.",
-        duties: [
-          "Prepare sales and purchase budgets per department and classification, using growth, industry and inflation data",
-          "Compute average stock, monthly stock and planned markdowns",
-          "Monitor sales, purchases, markdowns and open orders per store against the merchandise plan",
-          "Analyze monthly sales and inventory reports and recommend inventory adjustments",
-          "Compute economic order quantity (EOQ), re-order points and cost standards",
-          "Evaluate how well promotions perform, working with the marketing team",
-          "Maintain historical sales, purchase and markdown records"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Accounting, Management, Economics, Statistics or a related field",
-          "1–3 years in merchandise planning, inventory control, budgeting or sales analysis, preferably in retail (fresh graduates with strong analytical skills are welcome to apply)",
-          "Advanced Excel skills (pivot tables, lookups, formulas)",
-          "Good understanding of inventory concepts such as stock-to-sales, markdowns, EOQ and re-order points",
-          "Detail-oriented and accurate with numbers",
-          "High integrity in handling confidential data",
-          "Willing to be assigned to any of our branches or offices within Metro Manila"
-        ]
-      },
-      {
-        title: "MERCHANDISE PLANNING AND ANALYSIS SUPERVISOR",
-        intro: "An established Philippine retail company (department store and supermarket) is looking for a Merchandise Planning and Analysis Supervisor to keep sales, purchases and inventory in balance.",
-        duties: [
-          "Monitor sales, purchase budgets and inventory levels across merchandising departments",
-          "Check planned sales, purchases, markdowns, monthly and average stocks, and initial gross margins for accuracy",
-          "Prepare quarterly, semi-annual and yearly sales reviews for management",
-          "Prepare monthly concessionaire analysis reports",
-          "Oversee physical inventory taking",
-          "Keep historical sales, purchase and inventory data, and follow up system-generated reports",
-          "Lead, schedule, train and evaluate a team of analysts"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Accounting, Management, Statistics or a related field",
-          "At least 3 years in merchandise planning, inventory control or sales analysis in retail, with at least 1 year in a supervisory role",
-          "Strong skills with numbers and good knowledge of retail metrics (sell-through, stock-to-sales, gross margin)",
-          "Advanced Excel skills (pivot tables, lookups); experience with retail/ERP systems is a plus",
-          "Good at coordinating with buyers and merchandising teams",
-          "Detail-oriented, with high integrity in handling confidential data",
-          "Willing to be assigned to any of our branches or offices within Metro Manila"
-        ]
-      },
-      {
-        title: "AUDIT MANAGER",
-        intro: "An established Philippine retail company (department store and supermarket) is looking for an Audit Manager to lead its internal audit team, plan and oversee financial and operational audits across the main office and branches, and report findings to management.",
-        duties: [
-          "Design and update audit programs, and prepare the annual audit plan and interim audit schedules",
-          "Lead and supervise the Financial and Operations Audit Supervisors and Junior Auditors, and review their working papers",
-          "Review internal controls and recommend improvements to systems and procedures",
-          "Conduct branch audits covering cash/POS, inventory counts, shrinkage and concessionaire accounts",
-          "Test compliance with company policies and procedures",
-          "Prepare and present audit reports to management",
-          "Manage the department budget, staff schedules, performance reviews and training",
-          "Coordinate with other department heads and attend management meetings"
-        ],
-        quals: [
-          "A bachelor's degree in Accountancy, Finance or a related field; CPA preferred (CIA is a plus)",
-          "At least 5 years of internal or external audit experience, including 2+ years supervising auditors",
-          "Audit experience in retail, a department store or a supermarket is a strong advantage",
-          "Strong knowledge of internal controls and cash and inventory audit procedures",
-          "Good leadership, communication and report-writing skills",
-          "Willing to work on-site and travel to branches within Metro Manila as needed"
-        ]
-      },
-      {
-        title: "JUNIOR AUDITOR (FINANCIAL)",
-        intro: "An established Philippine retail company (department store and supermarket) is looking for a detail-oriented Junior Auditor to help protect company assets and keep financial records accurate across its stores.",
-        duties: [
-          "Conduct surprise cash counts of cashier funds, POS/cash-in-drawer, sales for deposit, and disbursement and collection funds",
-          "Check accounting and financial data through reconciliations, vouching and review of books and records",
-          "Test compliance with company financial policies, memos and procedures",
-          "Audit accounting, finance, cashiering, and credit and collection operations",
-          "Take part in inventory and fixed asset counts to confirm assets exist and are kept safe",
-          "Prepare audit findings and reports for the Audit Supervisor",
-          "Help draft audit programs and recommend process improvements",
-          "Coordinate with department managers, branch staff and fellow auditors"
-        ],
-        quals: [
-          "A bachelor's degree in Accountancy or a related accounting course; CPA or board passer is a plus",
-          "0–2 years of experience in audit, accounting or cashiering; retail, department store or supermarket experience is an advantage",
-          "Fresh graduates with audit-related OJT are welcome to apply",
-          "Honest, organized and detail-oriented",
-          "Good MS Excel skills",
-          "Willing to travel to different branches within Metro Manila"
-        ]
-      },
-      {
-        title: "STORE OPERATIONS DIVISION MANAGER (DEPARTMENT STORE)",
-        intro: "An established Philippine retail company is looking for a Store Operations Division Manager to lead its department store operations, including the selling floors, warehouse/receiving and counter (cashiering) teams, with the goal of hitting sales targets, giving excellent customer service and keeping costs low.",
-        duties: [
-          "Lead department store managers, the traffic (warehouse/receiving) manager and counter managers across the division",
-          "Drive sales and excellent customer service, handle escalated complaints, and monitor each store's sales performance",
-          "Improve store layout, displays, promotions, selling skills and product knowledge with the merchandising, store design and training teams",
-          "Oversee receiving, tagging, warehouse space and stock requisitions (FIFO) to reduce losses and keep inventory at the right level",
-          "Manage counter/cashiering operations, including staff scheduling, supplies, POS machines and the safekeeping of cash and gift cheques",
-          "Prepare and control the division budget, work with leasing on concessionaire matters, and improve policies and procedures",
-          "Hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Management, Retail Management or a related field; an MBA is a plus",
-          "At least 8–10 years of retail store operations experience, including 5+ years managing multiple stores or departments",
-          "Department store experience, including warehousing/receiving, cashiering and concessionaire management",
-          "A proven record of meeting sales targets, controlling expenses and reducing shrinkage",
-          "Good eye for visual merchandising, store layout and promotions",
-          "Strong leadership, decision-making and customer-service skills, and good knowledge of POS and inventory systems",
-          "Willing to work weekends and holidays, and to visit stores within Metro Manila regularly"
-        ]
-      },
-      {
-        title: "STORE OPERATIONS DIVISION MANAGER (SUPERMARKET)",
-        intro: "An established Philippine retail company is looking for a Store Operations Division Manager to lead its supermarket operations, including the store, receiving/warehouse and checkout teams, with the goal of hitting sales targets, giving fast and friendly service and keeping costs and losses low.",
-        duties: [
-          "Lead supermarket store managers and the receiving/warehouse and checkout (counter) teams across the division",
-          "Drive sales and fast, courteous service, handle escalated complaints, and monitor each store's sales performance",
-          "Oversee receiving, stocking and stock rotation (FIFO) of fresh, chilled and dry goods to reduce spoilage, expiry and shrinkage",
-          "Keep shelves full, displays neat and promotions on time, working with supermarket purchasing and merchandising",
-          "Manage checkout operations, including cashier scheduling, bagging supplies, POS machines and the safekeeping of cash",
-          "Prepare and control the division budget, and enforce food safety, sanitation and store standards",
-          "Hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Management, Retail Management or a related field; an MBA is a plus",
-          "At least 8–10 years of retail store operations experience, including 5+ years managing multiple supermarket or grocery stores",
-          "Hands-on experience with fresh/perishables handling, receiving and checkout operations",
-          "A proven record of meeting sales targets, controlling expenses and reducing shrinkage and spoilage",
-          "Knowledge of food safety and sanitation standards (e.g. HACCP) is an advantage",
-          "Strong leadership, decision-making and customer-service skills, and good knowledge of POS and inventory systems",
-          "Willing to work weekends and holidays, and to visit stores within Metro Manila regularly"
-        ]
-      },
-      {
-        title: "MERCHANDISE PLANNING AND CONTROL MANAGER",
-        intro: "An established Philippine retail company (department store and supermarket) is looking for a Merchandise Planning and Control Manager to manage its Merchandise Planning and Control team and help the company reach its sales and profit goals.",
-        duties: [
-          "Lead the preparation of sales and purchase budgets per store, department and classification",
-          "Make sure purchase budgets match sales budgets and the company's profit and gross margin targets",
-          "Work with merchandising, supermarket purchasing and operations, IT, accounting and top management on budgets, reports and inventory matters",
-          "Track actual purchases, markdowns, monthly stocks and gross margin against plan, and give timely reports to management",
-          "Analyze inventory adjustments and oversee the recording of supermarket inventory movements",
-          "Oversee physical inventory taking and the timely submission of monthly reports",
-          "Manage the Merchandise Planning and Control team (Merchandise Planning and Control officer, stock control supervisor, merchandising analysts and stock control clerks): assign and schedule work, train, coach and evaluate staff, and manage the department budget"
-        ],
-        quals: [
-          "A bachelor's degree in Business Administration, Accounting, Management, Economics, Statistics or a related field",
-          "At least 5–7 years in merchandise planning, inventory control or sales analysis in retail, including 2–3 years as a supervisor or manager",
-          "Strong knowledge of retail budgeting and metrics (open-to-buy, stock-to-sales, markdowns, gross margin)",
-          "Advanced Excel skills (pivot tables, lookups); experience with retail/ERP systems is a plus",
-          "Good at working with buyers, merchandising, IT and accounting/finance teams",
-          "Strong leadership and report-writing skills",
-          "Detail-oriented, with high integrity in handling confidential data"
-        ]
-      }
-    ];
-
-    // ===== PAGE LOGIC (nothing is saved or sent anywhere) =====
-    const jobsBox = document.getElementById("jobs");
-    const searchBox = document.getElementById("search");
-    const countBox = document.getElementById("count");
-    const filterButtons = document.querySelectorAll(".filter");
-    const showOnline = FORM_LINK.trim() !== "";
-    let currentFilter = "all";
-
-    function isManager(job) {
-      return /manager/i.test(job.title);
-    }
-
-    function make(tag, className, text) {
-      const node = document.createElement(tag);
-      if (className) node.className = className;
-      if (text !== undefined) node.textContent = text;
-      return node;
-    }
-
-    function makeList(items) {
-      const ul = make("ul");
-      items.forEach(function (item) { ul.appendChild(make("li", "", item)); });
-      return ul;
-    }
-
-    function buildCard(job, index) {
-      const card = make("article", "card");
-      const detailsId = "job-details-" + index;
-
-      // Clickable header
-      const toggle = make("button", "card-toggle");
-      toggle.type = "button";
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-controls", detailsId);
-
-      const head = make("div");
-      head.appendChild(make("h2", "card-title", job.title));
-      head.appendChild(make("div", "meta", "Full-time | On-site | Metro Manila only"));
-      const hint = make("div", "hint", "Tap to view details");
-      head.appendChild(hint);
-      toggle.appendChild(head);
-      toggle.appendChild(make("span", "chev", "▾"));
-      card.appendChild(toggle);
-
-      // Expandable details
-      const details = make("div", "details");
-      details.id = detailsId;
-      details.hidden = true;
-      details.appendChild(make("p", "intro", job.intro));
-      details.appendChild(make("h3", "", "What you'll do"));
-      details.appendChild(makeList(job.duties));
-      details.appendChild(make("h3", "", "What we're looking for"));
-      details.appendChild(makeList(job.quals));
-      card.appendChild(details);
-
-      toggle.addEventListener("click", function () {
-        const open = details.hidden;
-        details.hidden = !open;
-        card.classList.toggle("open", open);
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        hint.textContent = open ? "Tap to hide details" : "Tap to view details";
-      });
-
-      // Apply buttons
-      const apply = make("div", "apply");
-      apply.appendChild(make("p", "apply-note", EMAIL_TEXT + " Email: " + APPLY_EMAIL));
-
-      const actions = make("div", "actions");
-      const emailBtn = make("a", "btn btn-email", "Apply by email");
-      emailBtn.href = "mailto:" + APPLY_EMAIL +
-        "?subject=" + encodeURIComponent(job.title) +
-        "&body=" + encodeURIComponent(EMAIL_TEXT);
-      actions.appendChild(emailBtn);
-
-      if (showOnline) {
-        const onlineBtn = make("a", "btn btn-online", "Apply online");
-        onlineBtn.href = FORM_LINK.trim();
-        onlineBtn.target = "_blank";
-        onlineBtn.rel = "noopener noreferrer";
-        actions.appendChild(onlineBtn);
-      }
-
-      apply.appendChild(actions);
-      card.appendChild(apply);
-      return card;
-    }
-
-    function render() {
-      const term = searchBox.value.trim().toLowerCase();
-      jobsBox.innerHTML = "";
-      let shown = 0;
-
-      JOBS.forEach(function (job, i) {
-        if (currentFilter === "managers" && !isManager(job)) return;
-        if (currentFilter === "staff" && isManager(job)) return;
-        if (term) {
-          const allText = [job.title, job.intro].concat(job.duties, job.quals).join(" ").toLowerCase();
-          if (allText.indexOf(term) === -1) return;
-        }
-        jobsBox.appendChild(buildCard(job, i));
-        shown++;
-      });
-
-      if (shown === 0) {
-        jobsBox.appendChild(make("p", "empty", "No jobs match your search. Try another word or choose \"All\"."));
-      }
-      countBox.textContent = "Showing " + shown + " of " + JOBS.length + " positions";
-    }
-
-    filterButtons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        filterButtons.forEach(function (b) { b.classList.remove("active"); });
-        btn.classList.add("active");
-        currentFilter = btn.getAttribute("data-filter");
-        render();
-      });
-    });
-
-    searchBox.addEventListener("input", render);
-    render();
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
