@@ -3,24 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Careers – Job Openings in Manila | DynamicMinds</title>
+  <title>Job Openings – Retail Careers in Metro Manila</title>
   <meta name="description" content="Job openings in Metro Manila at an established Philippine retail company (department store and supermarket): store operations, buying, merchandising, planning and audit roles.">
   <link rel="canonical" href="https://dmbsi.github.io/Careers/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Careers – Job Openings in Manila | DynamicMinds">
-  <meta property="og:description" content="Job openings in Metro Manila at an established Philippine retail company (department store and supermarket): store operations, buying, merchandising, planning and audit roles.">
+  <meta property="og:title" content="Job Openings – Retail Careers in Metro Manila">
+  <meta property="og:description" content="An established Philippine retail company is hiring store, merchandising, buying and audit professionals. Send your résumé by email with the subject Application for (Position).">
   <meta property="og:url" content="https://dmbsi.github.io/Careers/">
-  <link rel="stylesheet" href="style.css">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Job Openings – Retail Careers in Metro Manila">
+  <meta name="twitter:description" content="An established Philippine retail company is hiring store, merchandising, buying and audit professionals. Send your résumé by email with the subject Application for (Position).">
+  <style>
+    :root {
+      --green: #1B7D35;
+      --green-dark: #145F28;
+      --gold: #A39E1E;
+      --gold-soft: #F8F7EA;
+      --text: #1F2933;
+      --muted: #56616B;
+      --line: #E4E2C8;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+    }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+    .sr-only { position: absolute; left: -9999px; }
+
+    /* Top bar */
+    .topbar { background: var(--green); color: #fff; border-bottom: 5px solid var(--gold); }
+    .topbar .wrap { padding-top: 14px; padding-bottom: 14px; font-weight: 700; font-size: 1.1rem; letter-spacing: .4px; }
+    .topbar a { color: #fff; text-decoration: none; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 36px 0 18px; }
+    .hero h1 { color: var(--green); font-size: 2.2rem; line-height: 1.2; margin: 0 0 12px; }
+    .hero h1::after {
+      content: ""; display: block; width: 70px; height: 4px;
+      background: var(--gold); border-radius: 2px; margin: 14px auto 0;
+    }
+    .hero p { max-width: 650px; margin: 0 auto; color: var(--muted); }
+
+    /* Search and filters */
+    .controls { padding: 10px 0 4px; }
+    .search {
+      width: 100%; padding: 14px 16px; font-size: 1rem; font-family: inherit;
+      border: 2px solid var(--gold); border-radius: 10px; background: #fff; color: var(--text);
+    }
+    .search:focus { outline: 3px solid rgba(27,125,53,.25); border-color: var(--green); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .filter {
+      font: inherit; font-size: .95rem; font-weight: 600; cursor: pointer;
+      padding: 8px 18px; border-radius: 999px;
+      border: 2px solid var(--green); background: #fff; color: var(--green);
+    }
+    .filter:hover { background: var(--gold-soft); }
+    .filter.active { background: var(--green); color: #fff; }
+    .filter:focus-visible, .card-toggle:focus-visible, .btn:focus-visible {
+      outline: 3px solid var(--gold); outline-offset: 2px;
+    }
+    .count { color: var(--muted); font-size: .9rem; margin: 12px 0 0; }
+
+    /* Job cards */
+    .jobs { padding: 6px 0 30px; }
+    .card {
+      border: 1px solid var(--line); border-left: 6px solid var(--gold);
+      border-radius: 12px; margin: 14px 0; background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .card[hidden] { display: none; }
+    .card.open { border-left-color: var(--green); }
+    .card-toggle {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 18px; background: none; border: 0; text-align: left; cursor: pointer;
+      font: inherit; color: inherit; border-radius: 12px;
+    }
+    .card-title, .job-title {
+      color: var(--green); font-weight: 700; margin: 0; line-height: 1.35;
+      text-transform: uppercase;
+    }
+    .card-title { font-size: 1.1rem; }
+    .meta { color: var(--muted); font-size: .92rem; margin-top: 4px; }
+    .hint { color: var(--gold); font-size: .85rem; font-weight: 600; margin-top: 2px; }
+    .chev {
+      flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%;
+      border: 2px solid var(--gold); color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; transition: transform .2s;
+    }
+    .card.open .chev { transform: rotate(180deg); }
+    .card .details { padding: 0 18px 4px; }
+    .details[hidden] { display: none; }
+    .intro { margin: 0 0 6px; }
+    .details h3, .details h2 {
+      color: var(--green); font-size: 1rem; margin: 18px 0 6px;
+      display: inline-block; border-bottom: 3px solid var(--gold); padding-bottom: 2px;
+    }
+    .details ul { margin: 6px 0 0; padding-left: 22px; }
+    .details li { margin-bottom: 6px; }
+    .page-link { margin: 14px 0 0; font-size: .92rem; }
+    .page-link a, .back a { color: var(--green); font-weight: 600; }
+
+    .card .apply { padding: 8px 18px 18px; }
+    .apply .btn { margin-top: 4px; }
+    .apply-note { margin: 12px 0 4px; }
+    .apply-address { font-size: .92rem; font-weight: 600; color: var(--green); margin: 0; word-break: break-all; }
+
+    /* How to apply box */
+    .how-to-apply {
+      border: 2px solid var(--gold); border-radius: 12px; background: var(--gold-soft);
+      padding: 14px 18px; margin: 6px 0 18px;
+    }
+    .how-to-apply h2 { color: var(--green); font-size: 1.1rem; margin: 0 0 6px; }
+    .how-to-apply p { margin: 0 0 6px; }
+    .apply-note {
+      background: var(--gold-soft); border: 1px solid var(--line); border-radius: 8px;
+      padding: 10px 12px; font-size: .92rem; color: var(--text);
+    }
+    .btn {
+      display: block; text-align: center; text-decoration: none;
+      padding: 15px 18px; border-radius: 10px; font-weight: 700; font-size: 1.05rem;
+    }
+    .btn-email { background: var(--green); color: #fff; border: 2px solid var(--green); }
+    .btn-email:hover { background: var(--green-dark); border-color: var(--green-dark); }
+
+    .empty { text-align: center; color: var(--muted); padding: 30px 0; }
+
+    /* Single job page */
+    .back { margin: 20px 0 0; font-size: .95rem; }
+    .job-page {
+      border: 1px solid var(--line); border-left: 6px solid var(--green);
+      border-radius: 12px; padding: 22px 18px; margin: 14px 0 30px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .job-title { font-size: 1.5rem; }
+    .posting-note { color: var(--muted); font-size: .95rem; margin: 10px 0 4px; }
+    .job-page .apply-heading {
+      color: var(--green); font-size: 1rem; margin: 24px 0 6px;
+      display: inline-block; border-bottom: 3px solid var(--gold); padding-bottom: 2px;
+    }
+
+    /* Footer */
+    footer { background: var(--green); color: #fff; border-top: 5px solid var(--gold); }
+    footer .wrap { padding-top: 22px; padding-bottom: 22px; text-align: center; }
+    footer p { margin: 6px 0; font-size: .95rem; }
+    footer .copy { opacity: .85; font-size: .85rem; margin-top: 14px; }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .job-title { font-size: 1.3rem; }
+      body { font-size: 16px; }
+    }
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Retail Company Careers",
-  "url": "https://dmbsi.github.io/Careers/",
-  "publisher": {
-    "@type": "Organization",
-    "name": "DynamicMinds Business Solutions Inc."
-  }
+  "url": "https://dmbsi.github.io/Careers/"
 }
   </script>
 </head>
@@ -36,6 +182,12 @@
       <p>An established Philippine retail company (department store and supermarket) is hiring for the positions below. All positions are based in branches within Metro Manila and are open to Metro Manila residents only. We are posting these openings on behalf of our client.</p>
     </section>
 
+    <section class="how-to-apply" aria-labelledby="how-to-apply-title">
+      <h2 id="how-to-apply-title">How to apply</h2>
+      <p>Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+      <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
+    </section>
+
     <section class="controls" aria-label="Search and filter jobs">
       <label for="search" class="sr-only">Search jobs</label>
       <input id="search" class="search" type="search" placeholder="Search jobs (e.g. buyer, audit, supermarket)" autocomplete="off">
@@ -48,7 +200,7 @@
     </section>
 
     <section class="jobs" id="jobs" aria-label="Job openings">
-      <article class="card" data-manager="1" data-search="store manager (supermarket) an established philippine retail company is looking for a supermarket store manager to lead its store team and drive sales, efficiency and customer service. drive store sales to meet or beat daily, weekly and monthly targets manage the store budget and control costs such as payroll, utilities and supplies oversee stock levels, ordering and receiving to avoid out-of-stocks and reduce losses from theft, spoilage or errors keep the store clean, organized and well-merchandised, with promo displays set up on time and correct prices hire, train, schedule, coach and evaluate store staff and supervisors handle escalated customer concerns and keep checkout lines moving during peak hours coordinate with buyers, suppliers, concessionaires, security and maintenance for smooth daily operations canvass and monitor competitors&#x27; prices, promos and product offerings regularly, and report findings so pricing stays competitive a bachelor&#x27;s degree in business administration, retail management, marketing or a related field at least 3–5 years of managerial or supervisory experience in retail, preferably in a supermarket or grocery a proven record of meeting sales goals, managing budgets and reducing shrinkage strong leadership, coaching and conflict-resolution skills working knowledge of pos and inventory systems, and ms office (excel, word, outlook) knowledge of food safety standards (haccp) is an advantage willing to work weekends, evenings and holidays, and to be assigned to any of our branches within metro manila">
+      <article class="card" data-manager="1">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-0">
           <div>
             <h2 class="card-title">Store Manager (Supermarket)</h2>
@@ -83,14 +235,12 @@
           <p class="page-link"><a href="jobs/store-manager-supermarket.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Store%20Manager%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Store%20Manager%20%28Supermarket%29">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="0" data-search="buyer (supermarket) an established philippine retail company is looking for a supermarket buyer to handle purchasing for an assigned product category and keep its product mix competitive. the category will be assigned based on your experience. select and buy products for an assigned supermarket category (e.g. fresh, dry grocery, frozen/chilled, beverages, personal care or household) based on trends, customer demand and market checks negotiate with suppliers on cost, payment terms, returns of bad orders, listing fees and rebates manage the purchasing budget and stock levels to avoid out-of-stocks, overstocking and expired goods set retail prices to meet margin targets while staying competitive plan supplier-funded promotions, flyer items and seasonal buying monitor supplier performance (fill rate, on-time delivery, quality) coordinate with store operations, warehouse, marketing and finance a bachelor&#x27;s degree in business administration, marketing, supply chain management or economics at least 2–3 years in retail purchasing, procurement or merchandising, preferably in a supermarket or fmcg (fast-moving consumer goods) company; experience in any grocery or non-food category is welcome a proven record of successful supplier negotiations advanced excel skills (vlookup, pivot tables) for sales and margin analysis good knowledge of local consumer preferences and seasonal trends high integrity in dealing with suppliers willing to be assigned to any of our branches or offices within metro manila">
+      <article class="card" data-manager="0">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-1">
           <div>
             <h2 class="card-title">Buyer (Supermarket)</h2>
@@ -124,14 +274,12 @@
           <p class="page-link"><a href="jobs/buyer-supermarket.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Buyer%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Buyer%20%28Supermarket%29">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="1" data-search="merchandising manager (supermarket) an established philippine retail company is looking for a merchandising manager to lead its supermarket merchandising and keep it competitive. build and carry out the merchandising strategy across all supermarket categories (fresh, dry grocery, non-food, personal care) manage category performance: sales, gross margin, inventory turnover and the product assortment set competitive prices and plan promotions and seasonal campaigns approve planograms and oversee shelf space, displays and in-store presentation work with buying, warehouse and store teams to keep shelves stocked, rotate stock and reduce waste negotiate trading terms, rebates and listing fees with suppliers lead and train buyers and store merchandising teams a bachelor&#x27;s degree in business administration, marketing, economics, supply chain management or a related field. an mba or a retail or procurement certification is a plus. at least 5–7 years in retail or fmcg, including 2–3 years as a supervisor or manager (for example senior buyer, category manager or assistant merchandising manager) a record of growing sales and margins in supermarket categories strong excel skills (pivot tables, vlookup) and experience with erp or pos systems strong negotiation and communication skills, and high integrity willing to visit stores and check competitors regularly, and to work longer hours during inventory counts and peak seasons willing to be assigned to any of our branches or offices within metro manila">
+      <article class="card" data-manager="1">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-2">
           <div>
             <h2 class="card-title">Merchandising Manager (Supermarket)</h2>
@@ -165,14 +313,12 @@
           <p class="page-link"><a href="jobs/merchandising-manager-supermarket.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandising%20Manager%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Merchandising%20Manager%20%28Supermarket%29">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="0" data-search="merchandise planning and control analyst an established philippine retail company (department store and supermarket) is looking for a merchandise planning and control analyst to prepare, monitor and analyze sales, purchase budgets and inventory levels. prepare sales and purchase budgets per department and classification, using growth, industry and inflation data compute average stock, monthly stock and planned markdowns monitor sales, purchases, markdowns and open orders per store against the merchandise plan analyze monthly sales and inventory reports and recommend inventory adjustments compute economic order quantity (eoq), re-order points and cost standards evaluate how well promotions perform, working with the marketing team maintain historical sales, purchase and markdown records a bachelor&#x27;s degree in business administration, accounting, management, economics, statistics or a related field 1–3 years in merchandise planning, inventory control, budgeting or sales analysis, preferably in retail (fresh graduates with strong analytical skills are welcome to apply) advanced excel skills (pivot tables, lookups, formulas) good understanding of inventory concepts such as stock-to-sales, markdowns, eoq and re-order points detail-oriented and accurate with numbers high integrity in handling confidential data willing to be assigned to any of our branches or offices within metro manila">
+      <article class="card" data-manager="0">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-3">
           <div>
             <h2 class="card-title">Merchandise Planning and Control Analyst</h2>
@@ -206,14 +352,12 @@
           <p class="page-link"><a href="jobs/merchandise-planning-and-control-analyst.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandise%20Planning%20and%20Control%20Analyst&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Merchandise%20Planning%20and%20Control%20Analyst">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="0" data-search="merchandise planning and analysis supervisor an established philippine retail company (department store and supermarket) is looking for a merchandise planning and analysis supervisor to keep sales, purchases and inventory in balance. monitor sales, purchase budgets and inventory levels across merchandising departments check planned sales, purchases, markdowns, monthly and average stocks, and initial gross margins for accuracy prepare quarterly, semi-annual and yearly sales reviews for management prepare monthly concessionaire analysis reports oversee physical inventory taking keep historical sales, purchase and inventory data, and follow up system-generated reports lead, schedule, train and evaluate a team of analysts a bachelor&#x27;s degree in business administration, accounting, management, statistics or a related field at least 3 years in merchandise planning, inventory control or sales analysis in retail, with at least 1 year in a supervisory role strong skills with numbers and good knowledge of retail metrics (sell-through, stock-to-sales, gross margin) advanced excel skills (pivot tables, lookups); experience with retail/erp systems is a plus good at coordinating with buyers and merchandising teams detail-oriented, with high integrity in handling confidential data willing to be assigned to any of our branches or offices within metro manila">
+      <article class="card" data-manager="0">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-4">
           <div>
             <h2 class="card-title">Merchandise Planning and Analysis Supervisor</h2>
@@ -247,14 +391,12 @@
           <p class="page-link"><a href="jobs/merchandise-planning-and-analysis-supervisor.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandise%20Planning%20and%20Analysis%20Supervisor&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Merchandise%20Planning%20and%20Analysis%20Supervisor">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="1" data-search="audit manager an established philippine retail company (department store and supermarket) is looking for an audit manager to lead its internal audit team, plan and oversee financial and operational audits across the main office and branches, and report findings to management. design and update audit programs, and prepare the annual audit plan and interim audit schedules lead and supervise the financial and operations audit supervisors and junior auditors, and review their working papers review internal controls and recommend improvements to systems and procedures conduct branch audits covering cash/pos, inventory counts, shrinkage and concessionaire accounts test compliance with company policies and procedures prepare and present audit reports to management manage the department budget, staff schedules, performance reviews and training coordinate with other department heads and attend management meetings a bachelor&#x27;s degree in accountancy, finance or a related field; cpa preferred (cia is a plus) at least 5 years of internal or external audit experience, including 2+ years supervising auditors audit experience in retail, a department store or a supermarket is a strong advantage strong knowledge of internal controls and cash and inventory audit procedures good leadership, communication and report-writing skills willing to work on-site and travel to branches within metro manila as needed">
+      <article class="card" data-manager="1">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-5">
           <div>
             <h2 class="card-title">Audit Manager</h2>
@@ -288,14 +430,12 @@
           <p class="page-link"><a href="jobs/audit-manager.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Audit%20Manager&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Audit%20Manager">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="0" data-search="junior auditor (financial) an established philippine retail company (department store and supermarket) is looking for a detail-oriented junior auditor to help protect company assets and keep financial records accurate across its stores. conduct surprise cash counts of cashier funds, pos/cash-in-drawer, sales for deposit, and disbursement and collection funds check accounting and financial data through reconciliations, vouching and review of books and records test compliance with company financial policies, memos and procedures audit accounting, finance, cashiering, and credit and collection operations take part in inventory and fixed asset counts to confirm assets exist and are kept safe prepare audit findings and reports for the audit supervisor help draft audit programs and recommend process improvements coordinate with department managers, branch staff and fellow auditors a bachelor&#x27;s degree in accountancy or a related accounting course; cpa or board passer is a plus 0–2 years of experience in audit, accounting or cashiering; retail, department store or supermarket experience is an advantage fresh graduates with audit-related ojt are welcome to apply honest, organized and detail-oriented good ms excel skills willing to travel to different branches within metro manila">
+      <article class="card" data-manager="0">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-6">
           <div>
             <h2 class="card-title">Junior Auditor (Financial)</h2>
@@ -329,14 +469,12 @@
           <p class="page-link"><a href="jobs/junior-auditor-financial.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Junior%20Auditor%20%28Financial%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Junior%20Auditor%20%28Financial%29">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="1" data-search="store operations division manager (department store) an established philippine retail company is looking for a store operations division manager to lead its department store operations, including the selling floors, warehouse/receiving and counter (cashiering) teams, with the goal of hitting sales targets, giving excellent customer service and keeping costs low. lead department store managers, the traffic (warehouse/receiving) manager and counter managers across the division drive sales and excellent customer service, handle escalated complaints, and monitor each store&#x27;s sales performance improve store layout, displays, promotions, selling skills and product knowledge with the merchandising, store design and training teams oversee receiving, tagging, warehouse space and stock requisitions (fifo) to reduce losses and keep inventory at the right level manage counter/cashiering operations, including staff scheduling, supplies, pos machines and the safekeeping of cash and gift cheques prepare and control the division budget, work with leasing on concessionaire matters, and improve policies and procedures hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high a bachelor&#x27;s degree in business administration, management, retail management or a related field; an mba is a plus at least 8–10 years of retail store operations experience, including 5+ years managing multiple stores or departments department store experience, including warehousing/receiving, cashiering and concessionaire management a proven record of meeting sales targets, controlling expenses and reducing shrinkage good eye for visual merchandising, store layout and promotions strong leadership, decision-making and customer-service skills, and good knowledge of pos and inventory systems willing to work weekends and holidays, and to visit stores within metro manila regularly">
+      <article class="card" data-manager="1">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-7">
           <div>
             <h2 class="card-title">Store Operations Division Manager (Department Store)</h2>
@@ -370,14 +508,12 @@
           <p class="page-link"><a href="jobs/store-operations-division-manager-department-store.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Store%20Operations%20Division%20Manager%20%28Department%20Store%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Store%20Operations%20Division%20Manager%20%28Department%20Store%29">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="1" data-search="store operations division manager (supermarket) an established philippine retail company is looking for a store operations division manager to lead its supermarket operations, including the store, receiving/warehouse and checkout teams, with the goal of hitting sales targets, giving fast and friendly service and keeping costs and losses low. lead supermarket store managers and the receiving/warehouse and checkout (counter) teams across the division drive sales and fast, courteous service, handle escalated complaints, and monitor each store&#x27;s sales performance oversee receiving, stocking and stock rotation (fifo) of fresh, chilled and dry goods to reduce spoilage, expiry and shrinkage keep shelves full, displays neat and promotions on time, working with supermarket purchasing and merchandising manage checkout operations, including cashier scheduling, bagging supplies, pos machines and the safekeeping of cash prepare and control the division budget, and enforce food safety, sanitation and store standards hire, train, evaluate and develop managers and supervisors, and keep discipline and morale high a bachelor&#x27;s degree in business administration, management, retail management or a related field; an mba is a plus at least 8–10 years of retail store operations experience, including 5+ years managing multiple supermarket or grocery stores hands-on experience with fresh/perishables handling, receiving and checkout operations a proven record of meeting sales targets, controlling expenses and reducing shrinkage and spoilage knowledge of food safety and sanitation standards (e.g. haccp) is an advantage strong leadership, decision-making and customer-service skills, and good knowledge of pos and inventory systems willing to work weekends and holidays, and to visit stores within metro manila regularly">
+      <article class="card" data-manager="1">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-8">
           <div>
             <h2 class="card-title">Store Operations Division Manager (Supermarket)</h2>
@@ -411,14 +547,12 @@
           <p class="page-link"><a href="jobs/store-operations-division-manager-supermarket.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Store%20Operations%20Division%20Manager%20%28Supermarket%29&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Store%20Operations%20Division%20Manager%20%28Supermarket%29">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
-      <article class="card" data-manager="1" data-search="merchandise planning and control manager an established philippine retail company (department store and supermarket) is looking for a merchandise planning and control manager to manage its merchandise planning and control team and help the company reach its sales and profit goals. lead the preparation of sales and purchase budgets per store, department and classification make sure purchase budgets match sales budgets and the company&#x27;s profit and gross margin targets work with merchandising, supermarket purchasing and operations, it, accounting and top management on budgets, reports and inventory matters track actual purchases, markdowns, monthly stocks and gross margin against plan, and give timely reports to management analyze inventory adjustments and oversee the recording of supermarket inventory movements oversee physical inventory taking and the timely submission of monthly reports manage the merchandise planning and control team (merchandise planning and control officer, stock control supervisor, merchandising analysts and stock control clerks): assign and schedule work, train, coach and evaluate staff, and manage the department budget a bachelor&#x27;s degree in business administration, accounting, management, economics, statistics or a related field at least 5–7 years in merchandise planning, inventory control or sales analysis in retail, including 2–3 years as a supervisor or manager strong knowledge of retail budgeting and metrics (open-to-buy, stock-to-sales, markdowns, gross margin) advanced excel skills (pivot tables, lookups); experience with retail/erp systems is a plus good at working with buyers, merchandising, it and accounting/finance teams strong leadership and report-writing skills detail-oriented, with high integrity in handling confidential data">
+      <article class="card" data-manager="1">
         <button class="card-toggle" type="button" aria-expanded="false" aria-controls="job-details-9">
           <div>
             <h2 class="card-title">Merchandise Planning and Control Manager</h2>
@@ -452,11 +586,9 @@
           <p class="page-link"><a href="jobs/merchandise-planning-and-control-manager.html">Open the full job page</a></p>
         </div>
         <div class="apply">
-          <p class="apply-note">Send your updated résumé and contact details (mobile number and email address). Please put the position you are applying for in the email subject. Email: dmbsitalentsteam@gmail.com</p>
-          <div class="actions">
-            <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Merchandise%20Planning%20and%20Control%20Manager&amp;body=Send%20your%20updated%20r%C3%A9sum%C3%A9%20and%20contact%20details%20%28mobile%20number%20and%20email%20address%29.%20Please%20put%20the%20position%20you%20are%20applying%20for%20in%20the%20email%20subject.">Apply by email</a>
-            <a class="btn btn-online" href="#" target="_blank" rel="noopener noreferrer" hidden>Apply online</a>
-          </div>
+          <a class="btn btn-email" href="mailto:dmbsitalentsteam@gmail.com?subject=Application%20for%20Merchandise%20Planning%20and%20Control%20Manager">Apply by email</a>
+          <p class="apply-note">Send your résumé by email with the subject &quot;Application for (Position)&quot;. Please make sure your résumé has your updated contact details – mobile number and email address.</p>
+          <p class="apply-address">Email: dmbsitalentsteam@gmail.com</p>
         </div>
       </article>
       <p class="empty" id="empty" hidden>No jobs match your search. Try another word or choose "All".</p>
@@ -472,6 +604,57 @@
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    // Page logic: expand/collapse, search and filters. Nothing is saved or sent anywhere.
+    (function () {
+      document.querySelectorAll(".card-toggle").forEach(function (toggle) {
+        var card = toggle.closest(".card");
+        var details = document.getElementById(toggle.getAttribute("aria-controls"));
+        var hint = toggle.querySelector(".hint");
+        toggle.addEventListener("click", function () {
+          var open = details.hidden;
+          details.hidden = !open;
+          card.classList.toggle("open", open);
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          hint.textContent = open ? "Tap to hide details" : "Tap to view details";
+        });
+      });
+
+      var searchBox = document.getElementById("search");
+      var cards = document.querySelectorAll(".card");
+      var countBox = document.getElementById("count");
+      var emptyMsg = document.getElementById("empty");
+      var filterButtons = document.querySelectorAll(".filter");
+      var currentFilter = "all";
+
+      function render() {
+        var term = searchBox.value.trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (card) {
+          var isManager = card.getAttribute("data-manager") === "1";
+          var ok = true;
+          if (currentFilter === "managers" && !isManager) ok = false;
+          if (currentFilter === "staff" && isManager) ok = false;
+          if (ok && term && card.textContent.toLowerCase().indexOf(term) === -1) ok = false;
+          card.hidden = !ok;
+          if (ok) shown++;
+        });
+        emptyMsg.hidden = shown !== 0;
+        countBox.textContent = "Showing " + shown + " of " + cards.length + " positions";
+      }
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          filterButtons.forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          currentFilter = btn.getAttribute("data-filter");
+          render();
+        });
+      });
+
+      searchBox.addEventListener("input", render);
+      render();
+    })();
+  </script>
 </body>
 </html>
