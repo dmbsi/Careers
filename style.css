@@ -95,24 +95,27 @@ body {
 .page-link a, .back a { color: var(--green); font-weight: 600; }
 
 .card .apply { padding: 8px 18px 18px; }
+.apply .btn { margin-top: 4px; }
+.apply-note { margin: 12px 0 4px; }
+.apply-address { font-size: .92rem; font-weight: 600; color: var(--green); margin: 0; word-break: break-all; }
+
+/* How to apply box */
+.how-to-apply {
+  border: 2px solid var(--gold); border-radius: 12px; background: var(--gold-soft);
+  padding: 14px 18px; margin: 6px 0 18px;
+}
+.how-to-apply h2 { color: var(--green); font-size: 1.1rem; margin: 0 0 6px; }
+.how-to-apply p { margin: 0 0 6px; }
 .apply-note {
   background: var(--gold-soft); border: 1px solid var(--line); border-radius: 8px;
-  padding: 10px 12px; font-size: .92rem; color: var(--text); margin: 4px 0 12px;
+  padding: 10px 12px; font-size: .92rem; color: var(--text);
 }
-.actions { display: flex; flex-direction: column; gap: 10px; }
 .btn {
   display: block; text-align: center; text-decoration: none;
   padding: 15px 18px; border-radius: 10px; font-weight: 700; font-size: 1.05rem;
 }
-.btn[hidden] { display: none; }
 .btn-email { background: var(--green); color: #fff; border: 2px solid var(--green); }
 .btn-email:hover { background: var(--green-dark); border-color: var(--green-dark); }
-.btn-online { background: #fff; color: var(--green); border: 2px solid var(--green); }
-.btn-online:hover { background: var(--gold-soft); }
-@media (min-width: 640px) {
-  .actions { flex-direction: row; }
-  .actions .btn { flex: 1; }
-}
 
 .empty { text-align: center; color: var(--muted); padding: 30px 0; }
 
