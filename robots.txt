@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://dmbsi.github.io/Careers/sitemap.xml
